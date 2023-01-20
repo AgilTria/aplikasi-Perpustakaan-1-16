@@ -37,9 +37,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.tentangToolStripMenuItem = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
-            this.keluarToolStripMenuItem = new System.Windows.Forms.Button();
             this.lbl_id = new System.Windows.Forms.Label();
             this.btn_profile = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -127,9 +125,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.tentangToolStripMenuItem);
             this.panel1.Controls.Add(this.btn_logout);
-            this.panel1.Controls.Add(this.keluarToolStripMenuItem);
             this.panel1.Controls.Add(this.lbl_id);
             this.panel1.Controls.Add(this.btn_profile);
             this.panel1.Controls.Add(this.label8);
@@ -168,15 +164,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "User Account";
             // 
-            // tentangToolStripMenuItem
-            // 
-            this.tentangToolStripMenuItem.Location = new System.Drawing.Point(198, 595);
-            this.tentangToolStripMenuItem.Name = "tentangToolStripMenuItem";
-            this.tentangToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
-            this.tentangToolStripMenuItem.TabIndex = 1;
-            this.tentangToolStripMenuItem.Text = "Tentang";
-            this.tentangToolStripMenuItem.UseVisualStyleBackColor = true;
-            // 
             // btn_logout
             // 
             this.btn_logout.BackColor = System.Drawing.Color.DodgerBlue;
@@ -188,16 +175,6 @@
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
-            // 
-            // keluarToolStripMenuItem
-            // 
-            this.keluarToolStripMenuItem.Location = new System.Drawing.Point(0, 595);
-            this.keluarToolStripMenuItem.Name = "keluarToolStripMenuItem";
-            this.keluarToolStripMenuItem.Size = new System.Drawing.Size(71, 26);
-            this.keluarToolStripMenuItem.TabIndex = 0;
-            this.keluarToolStripMenuItem.Text = "Keluar";
-            this.keluarToolStripMenuItem.UseVisualStyleBackColor = true;
-            this.keluarToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbl_id
             // 
@@ -548,8 +525,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_profile;
-        private System.Windows.Forms.Button tentangToolStripMenuItem;
-        private System.Windows.Forms.Button keluarToolStripMenuItem;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label4;
     }
