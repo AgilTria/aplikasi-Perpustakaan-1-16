@@ -46,13 +46,13 @@ namespace perpustakaan_app.model
 
         public DataTable get_cetak_buku_pinjam(string id)
         {
-            var result = db.get_data("select a.id_buku, a.judul, b.tgl_pinjam, adddate(b.tgl_pinjam, interval 7 day) as tgl_kembali from tb_buku a, tb_pinjam b, tb_detail_pinjam c where c.id_pinjam=b.id_pinjam and c.id_buku=a.id_buku and c.id_pinjam='"+id+"' and c.kembali='n'");
+            var result = db.get_data("select a.id_buku, a.judul, b.tgl_pinjam, adddate(b.tgl_pinjam, interval 7 day) as tgl_kembali from tb_buku a, tb_pinjam b, tb_detail_pinjam c where c.id_pinjam=b.id_pinjam and c.id_buku=a.id_buku and c.id_pinjam='" + id + "' and c.kembali='n'");
             return result;
         }
 
         public DataTable get_cetak_buku_kembali(string id)
         {
-            var result = db.get_data("select a.id_buku, a.judul, (select denda from tb_denda b where b.id_buku=a.id_buku and b.id_pinjam=c.id_pinjam) as denda, (select tipe_denda from tb_denda b where b.id_buku=a.id_buku and b.id_pinjam=c.id_pinjam) as tipe_denda from tb_buku a, tb_detail_pinjam c where c.id_buku=a.id_buku and c.id_pinjam='"+id+"' and c.kembali='y'");
+            var result = db.get_data("select a.id_buku, a.judul, (select denda from tb_denda b where b.id_buku=a.id_buku and b.id_pinjam=c.id_pinjam) as denda, (select tipe_denda from tb_denda b where b.id_buku=a.id_buku and b.id_pinjam=c.id_pinjam) as tipe_denda from tb_buku a, tb_detail_pinjam c where c.id_buku=a.id_buku and c.id_pinjam='" + id + "' and c.kembali='y'");
             return result;
         }
 
@@ -136,7 +136,7 @@ namespace perpustakaan_app.model
         }
         public string[] get_last_pinjam(string id)
         {
-            var result = db.get_data("select id_pinjam, id_member, tgl_pinjam from tb_pinjam where id_member='"+id+"' order by id_pinjam desc limit 1");
+            var result = db.get_data("select id_pinjam, id_member, tgl_pinjam from tb_pinjam where id_member='" + id + "' order by id_pinjam desc limit 1");
 
             string[] tgl = lib.pisahkan(result.Rows[0][2].ToString(), "/");
             string[] data = {

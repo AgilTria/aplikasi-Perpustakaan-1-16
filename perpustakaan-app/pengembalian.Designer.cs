@@ -261,7 +261,7 @@
             // 
             // btn_print
             // 
-            this.btn_print.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_print.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_print.FlatAppearance.BorderSize = 0;
@@ -270,10 +270,10 @@
             this.btn_print.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_print.Image = global::perpustakaan_app.Properties.Resources.cetak;
             this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(202, 101);
+            this.btn_print.Location = new System.Drawing.Point(786, 61);
             this.btn_print.Name = "btn_print";
             this.btn_print.Padding = new System.Windows.Forms.Padding(5, 0, 2, 0);
-            this.btn_print.Size = new System.Drawing.Size(127, 32);
+            this.btn_print.Size = new System.Drawing.Size(24, 16);
             this.btn_print.TabIndex = 51;
             this.btn_print.Text = "DETAIL PINJAM";
             this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

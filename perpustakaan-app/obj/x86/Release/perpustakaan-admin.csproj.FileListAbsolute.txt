@@ -158,3 +158,6 @@ C:\Users\agilt\source\repos\Uji 1_15\perpustakaan-app\bin\Release\WebMatrix.WebD
 C:\Users\agilt\source\repos\Uji 1_15\perpustakaan-app\obj\x86\Release\perpustakaan-app.exe.manifest
 C:\Users\agilt\source\repos\Uji 1_15\perpustakaan-app\obj\x86\Release\perpustakaan-app.application
 C:\Users\agilt\source\repos\Uji 1_15\perpustakaan-app\obj\x86\Release\perpustakaan-admin.csproj.CopyComplete
+C:\Users\agilt\source\repos\Uji 1_15\perpustakaan-app\bin\Release\administrator.resx
+C:\Users\agilt\source\repos\Uji 1_15\perpustakaan-app\bin\Release\administrator.cs
+C:\Users\agilt\source\repos\Uji 1_15\perpustakaan-app\bin\Release\administrator.Designer.cs

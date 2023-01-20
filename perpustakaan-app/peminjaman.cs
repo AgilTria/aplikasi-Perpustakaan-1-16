@@ -137,5 +137,10 @@ namespace perpustakaan_app
             frmact.panel_pinjam.Visible = false;
             frmact.ShowDialog();
         }
+
+        private void dgv_data_pinjam_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

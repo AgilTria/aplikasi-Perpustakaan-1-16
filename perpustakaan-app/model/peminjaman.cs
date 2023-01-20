@@ -10,7 +10,7 @@ namespace perpustakaan_app.model
     {
         public string count_search(string k, string q)
         {
-            var result = db.get_data("select count(*) from tb_pinjam a, tb_member b, tb_pegawai c where a.id_member=b.id_member and a.id_pegawai=c.id_pegawai and (select count(*) from tb_kembali d where d.id_pinjam=a.id_pinjam)='0' and a."+k+" like '%"+q+"%'");
+            var result = db.get_data("select count(*) from tb_pinjam a, tb_member b, tb_pegawai c where a.id_member=b.id_member and a.id_pegawai=c.id_pegawai and (select count(*) from tb_kembali d where d.id_pinjam=a.id_pinjam)='0' and a." + k + " like '%" + q + "%'");
             return result.Rows[0][0].ToString();
         }
 
@@ -34,7 +34,7 @@ namespace perpustakaan_app.model
 
             foreach (DataRow dr in result.Rows)
             {
-                string [] exp_tgl = lib.pisahkan(dr[4].ToString(), "/");
+                string[] exp_tgl = lib.pisahkan(dr[4].ToString(), "/");
                 DateTime dt1 = new DateTime(Convert.ToInt32(exp_tgl[2].Substring(0, 4)), Convert.ToInt32(exp_tgl[0]), Convert.ToInt32(exp_tgl[1]));
                 DateTime dt = dt1.AddDays(7);
                 dr[5] = dt.Month + "/" + dt.Day + "/" + dt.Year;
@@ -44,7 +44,7 @@ namespace perpustakaan_app.model
 
         public bool cek_peminjaman(string id_member)
         {
-            var result = db.get_data("select count(*) from tb_pinjam a where (select count(*) from tb_kembali b where b.id_pinjam=a.id_pinjam)='0' and a.id_member='"+id_member+"'");
+            var result = db.get_data("select count(*) from tb_pinjam a where (select count(*) from tb_kembali b where b.id_pinjam=a.id_pinjam)='0' and a.id_member='" + id_member + "'");
             if (result.Rows[0][0].ToString() != "0")
             {
                 return true;
@@ -62,19 +62,19 @@ namespace perpustakaan_app.model
 
         public DataTable get_buku_pinjam(string id)
         {
-            var result = db.get_data("select a.id_buku, a.judul, a.pengarang, a.penerbit from tb_buku a, tb_detail_pinjam b where (select count(*) from tb_detail_kembali c where c.id_pinjam='"+id+"' and c.id_buku=b.id_buku)='0' and b.id_buku=a.id_buku and b.id_pinjam='" + id + "'");
+            var result = db.get_data("select a.id_buku, a.judul, a.pengarang, a.penerbit from tb_buku a, tb_detail_pinjam b where (select count(*) from tb_detail_kembali c where c.id_pinjam='" + id + "' and c.id_buku=b.id_buku)='0' and b.id_buku=a.id_buku and b.id_pinjam='" + id + "'");
             return result;
         }
 
         public DataTable get_cetak_buku_pinjam(string id)
         {
-            var result = db.get_data("select a.id_buku, a.judul, b.tgl_pinjam, adddate(b.tgl_pinjam, interval 7 day) as tgl_kembali from tb_buku a, tb_pinjam b, tb_detail_pinjam c where c.id_pinjam=b.id_pinjam and c.id_buku=a.id_buku and c.id_pinjam='"+id+"'");
+            var result = db.get_data("select a.id_buku, a.judul, b.tgl_pinjam, adddate(b.tgl_pinjam, interval 7 day) as tgl_kembali from tb_buku a, tb_pinjam b, tb_detail_pinjam c where c.id_pinjam=b.id_pinjam and c.id_buku=a.id_buku and c.id_pinjam='" + id + "'");
             return result;
         }
 
         public DataTable get_cetak_buku_kembali(string id)
         {
-            var result = db.get_data("select a.id_buku, a.judul, b.tipe_denda, b.denda from tb_buku a, tb_detail_kembali b where b.id_buku=a.id_buku and b.id_pinjam='"+id+"'");
+            var result = db.get_data("select a.id_buku, a.judul, b.tipe_denda, b.denda from tb_buku a, tb_detail_kembali b where b.id_buku=a.id_buku and b.id_pinjam='" + id + "'");
             return result;
         }
 
@@ -158,7 +158,7 @@ namespace perpustakaan_app.model
         }
         public string[] get_last_pinjam(string id)
         {
-            var result = db.get_data("select id_pinjam, id_member, tgl_pinjam from tb_pinjam where id_member='"+id+"' order by id_pinjam desc limit 1");
+            var result = db.get_data("select id_pinjam, id_member, tgl_pinjam from tb_pinjam where id_member='" + id + "' order by id_pinjam desc limit 1");
 
             string[] tgl = lib.pisahkan(result.Rows[0][2].ToString(), "/");
             string[] data = {
@@ -177,7 +177,7 @@ namespace perpustakaan_app.model
             {
                 tipe_denda = "Buku Hilang";
             }
-            db.execute("insert into tb_detail_kembali values('"+id_pinjam+"','"+id_buku+"','"+tipe_denda+"','"+denda+"')");
+            db.execute("insert into tb_detail_kembali values('" + id_pinjam + "','" + id_buku + "','" + tipe_denda + "','" + denda + "')");
             if (!isset_kembali(id_pinjam))
             {
                 DateTime dt = DateTime.Today;

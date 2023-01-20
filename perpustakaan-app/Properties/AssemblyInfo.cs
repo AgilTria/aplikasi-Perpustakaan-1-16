@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("perpustakaan-app")]
-[assembly: AssemblyCopyright("Copyright ©  2018")] 
+[assembly: AssemblyCopyright("Global dunia")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

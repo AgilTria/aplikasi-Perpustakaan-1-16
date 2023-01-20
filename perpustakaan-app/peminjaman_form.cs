@@ -151,5 +151,9 @@ namespace perpustakaan_app
             laporan.ShowDialog();  
         }
 
+        private void txt_tgl_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

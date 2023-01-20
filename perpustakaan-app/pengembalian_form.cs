@@ -69,7 +69,7 @@ namespace perpustakaan_app
             var id_buku = dgv_buku_pinjam.Rows[baris].Cells[0].Value.ToString();
             pinjam.kembalikan_buku(txt_id.Text, id_buku, txt_idp.Text,check_denda.Checked, txt_denda.Text);
 
-            check_denda.Checked = false;
+            check_denda.Checked = true;
             show_buku_pinjam();
             data.show_all_pinjam();
             data2.show_all_kembali();
